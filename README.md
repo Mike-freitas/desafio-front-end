@@ -7,7 +7,7 @@ Não existe certo ou errado, queremos ver como você se sai em situações reais
 
 Portanto, dê o seu melhor!
 
-:warning: **OBS:** Os layouts podem ser encontrados no figma **layout**
+:warning: **OBS:** Os layouts podem ser encontrados na pasta **layout**
 
 ![Layout](layout/Mobile.png)
 ![Layout](layout/Desktop.png)
