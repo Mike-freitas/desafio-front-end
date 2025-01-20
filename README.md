@@ -20,6 +20,11 @@ Portanto, dê o seu melhor!
 - No CSS usar (Flex box).
 - Crie uma documentação simples comentando sobre as tecnologias e soluções adotadas.
 - Realize o desenvolvimento dentro da pasta src
+- Caminho para configuração da api src/config/App.ts
+- Caminho para fazer chamadas de features, containers, e components, src/views/home/index.tsx
+- Caminho para criação de features, e containers para regra de negocios, reducers, actions, chamadas de components src/features
+- Caminho para criação de componets, src/components
+- Configurações globais CSS src/stylesheets
 
 ## Requisitos
 - Design responsivo nos breakpoints, mobile first
