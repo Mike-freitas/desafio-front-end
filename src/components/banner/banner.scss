@@ -1,0 +1,170 @@
+$mobile: '(max-width: 991px)';
+$mobileHorizontal: '(min-width: 576px) and (max-width: 767.98px)';
+$tablet: '(min-width: 768px) and (max-width: 991.98px)';
+$desktop: '(min-width: 992px)';
+
+$base-pixel-size: 16px;
+
+.HomeMainContainer {
+  .banner {
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(19, 41, 82, 0.5);
+      z-index: 2;
+    }
+
+    .banner-content {
+      position: absolute;
+      display: -ms-flexbox; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 3;
+      width: 480px;
+      min-height: 144px;
+    }
+
+    h1, p, .banner-button {
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .banner-button {
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 15px 25px;
+      margin: auto;
+      width: 200px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  @media #{$mobile} {
+   
+    .banner-content {
+      width: 320px;
+      min-height: 128px;
+    }
+
+    h1 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .banner-button {
+      width: 160px;
+    }
+  }
+
+  @media #{$mobileHorizontal} {
+    .banner-content {
+      width: 290px;
+      min-height: 112px;
+    }
+
+    h1 {
+      font-size: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .banner-button {
+      width: 150px;
+    }
+  }
+
+  @media #{$tablet} {
+    .banner-content {
+      width: 350px;
+      margin-left: 0;
+      min-height: 128px;
+    }
+
+    h1 {
+      font-size: 8px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .banner-button {
+      width: 170px;
+    }
+  }
+
+  @media #{$desktop} {
+    .banner-content {
+      top: 50%;
+      left: 50%;
+      margin-left: 30%;
+      width: 368px;
+      min-height: 144px;
+      transform: translate(-50%, -50%);
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .banner-button {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 647px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    .HomeMainContainer {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+}

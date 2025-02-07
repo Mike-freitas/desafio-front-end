@@ -1,0 +1,129 @@
+$mobile: '(max-width: 991px)';
+$mobileHorizontal: '(min-width: 576px) and (max-width: 767.98px)';
+$tablet: '(min-width: 768px) and (max-width: 991.98px)';
+$desktop: '(min-width: 992px)';
+
+.service_container {
+    text-align: center;
+    background: #ffffff;
+    margin-bottom: 15em;
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .service_title__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        margin-bottom: 10px;
+    }
+    .service-title {
+        font-size: 2em;
+    }
+
+    .background-bar {
+        width: 4.5em;
+        height: 0.4em;
+        margin-top: -1em; 
+        background-color: #04029b;
+    }
+
+    .background-bar-1 {
+        @extend .background-bar;
+    }
+
+    .background-bar-2 {
+        @extend .background-bar;
+    }
+
+    .carousel {
+        position: relative;
+        max-width: 11001px;
+        width: 100%;
+        margin: 0 auto;
+        background: #cccccc;
+        padding: 2em 15em;
+
+        .slide {
+            min-height: 150px;
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1rem;
+                color: #555;
+            }
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%; 
+            transform: translateY(-50%);
+            
+            width: 40px; 
+            height: 40px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background: #04029b;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+            transition: background 0.3s ease;
+        
+            &:hover {
+                background: #2825d7;
+            }
+        }
+        
+        .prev {
+            left: 100px;
+        }
+        
+        .next {
+            right: 100px;
+        }
+    }        
+
+    @media #{$mobile} {
+        .service_container{
+            padding-top:3em ;
+        }
+        .carousel {
+            padding: 1em 5em;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+    }
+
+    @media #{$mobileHorizontal} {
+        .carousel {
+            padding: 1.5em 8em;
+        }
+    }
+
+    @media #{$tablet} {
+        .carousel {
+            padding: 2em 10em;
+        }
+    }
+
+    @media #{$desktop} {
+        .carousel {
+            padding: 2em 15em;
+        }
+    }
+}

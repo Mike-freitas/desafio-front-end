@@ -1,0 +1,107 @@
+$mobile: '(max-width: 991px)';
+$mobileHorizontal: '(min-width: 576px) and (max-width: 767.98px)';
+$tablet: '(min-width: 768px) and (max-width: 991.98px)';
+$desktop: '(min-width: 992px)';
+
+.footer {
+    background-color: #282c34;
+    color: white;
+    padding: 3em 0;
+    text-align: center;
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        flex-wrap: wrap;
+
+        .footer-section {
+            flex: 1;
+            text-align: left;
+            min-width: 250px;
+            margin-bottom: 20px;
+            
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 1em 0;
+
+                li {
+                    margin-bottom: 1.5em;
+                }
+
+                .footer-link {
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #bdbdbd;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: 0.9rem;
+        border-top: 1px solid #ffffff;
+        padding-top: 10px;
+    }
+    
+    p {
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media #{$mobile} {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .footer-section {
+        text-align: center;
+        margin-right: 30em;
+    }
+    p {
+        margin-left: 0;
+    }
+}
+
+@media #{$mobileHorizontal} {
+    .footer-container {
+        margin: 0 2em;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+@media #{$tablet} {
+    .footer-container {
+        margin: 0 2em;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+@media #{$desktop} {
+    .footer-container {
+        margin: 0 auto;
+    }
+}

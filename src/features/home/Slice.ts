@@ -2,9 +2,9 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 import {AppDispatch, reduxNotifyError, RootState} from '@config/Redux';
 
-import {Home, HomeState} from './Types';
-
 import {HomeService} from './Service';
+
+import { Home, HomeState } from '../../types/home';
 
 // #region INITIAL STATE
 const initialState: HomeState = {
@@ -19,7 +19,7 @@ export const homeSlice = createSlice({
   name: 'homes',
   initialState,
   reducers: {
-    changeStatus: (state, action: PayloadAction<Status>) => {
+    changeStatus: (state, action: PayloadAction<'idle' | 'loading' | 'error'>) => {
       state.status = action.payload;
     },
     loadEntries: (state, action: PayloadAction<Home[]>) => {
@@ -28,7 +28,7 @@ export const homeSlice = createSlice({
     loadEntry: (state, action: PayloadAction<Home>) => {
       state.entry = action.payload;
     },
-    hasError: (state, action: PayloadAction<any>) => {
+    hasError: (state, action: PayloadAction<Error>) => {
       state.status = 'error';
     },
     reset: state => {
@@ -49,10 +49,10 @@ export const fetchAll = () => async (dispatch: AppDispatch) => {
 
   try {
     const {data} = await HomeService.all();
-    dispatch(loadEntries([data]));
+    dispatch(loadEntries(data));
     dispatch(changeStatus('idle'));
   } catch (ex) {
-    dispatch(hasError(ex));
+    dispatch(hasError(ex as Error));
     dispatch(reduxNotifyError(ex));
   }
 };

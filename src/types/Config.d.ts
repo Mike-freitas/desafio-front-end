@@ -15,3 +15,4 @@ export interface AppConfig extends EnvConfig {
 export interface TargetEnvConfig {
   [key: string]: EnvConfig;
 }
+

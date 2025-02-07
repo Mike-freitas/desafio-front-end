@@ -7,6 +7,50 @@ $desktop: '(min-width: 992px)';
 
 $base-pixel-size: 16;
 
+@media screen and #{$mobile} {
+  :root {
+    --layoutWidth: 320;
+    --layoutHeight: 480;
+  }
+
+  body {
+    font-size: $base-pixel-size * 1;
+  }
+}
+
+@media screen and #{$mobileHorizontal} {
+  :root {
+    --layoutWidth: 640;
+    --layoutHeight: 360;
+  }
+
+  body {
+    font-size: $base-pixel-size * 1.2;
+  }
+}
+
+@media screen and #{$tablet} {
+  :root {
+    --layoutWidth: 768;
+    --layoutHeight: 1024;
+  }
+
+  body {
+    font-size: $base-pixel-size * 1.5;
+  }
+}
+
+@media screen and #{$desktop} {
+  :root {
+    --layoutWidth: 1280;
+    --layoutHeight: 800;
+  }
+
+  body {
+    font-size: $base-pixel-size * 1.75;
+  }
+}
+
 @media screen and (orientation: landscape) {
   :root {
     --layoutWidth: 1280;

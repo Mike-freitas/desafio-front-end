@@ -1,24 +1,12 @@
-import React, {useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-import {useAppDispatch, useAppSelector} from '@hooks/Redux';
-
-import {isLoadingSelector, reset} from './Slice';
-
-import './MainContainer.scss';
-
-const HomeMainContainer = (): JSX.Element => {
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const isLoading = useAppSelector(state => isLoadingSelector(state));
-
-  useEffect(() => {
-    return () => {
-      dispatch(reset());
-    };
-  }, []);
-
-  return <div className="HomeMainContainer">HomeMainContainer</div>;
+const MainContainer = (): JSX.Element => {
+  return (
+    <div className="main-container">
+      <Outlet />
+    </div>
+  );
 };
 
-export default HomeMainContainer;
+export default MainContainer;

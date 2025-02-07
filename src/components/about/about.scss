@@ -1,0 +1,167 @@
+$mobile: '(max-width: 991px)';
+$mobileHorizontal: '(min-width: 576px) and (max-width: 767.98px)';
+$tablet: '(min-width: 768px) and (max-width: 991.98px)';
+$desktop: '(min-width: 992px)';
+
+
+.about-container {
+  padding: 10em;
+  background-color: #ffffff;
+  color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 100%;
+
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 10px;
+  }
+
+  .about-title {
+    font-size: 2em;
+  }
+
+  .background-bar {
+    width: 4.5em;
+    height: 0.4em;
+    background-color: #04029b;
+  }
+
+  .background-bar-1 {
+    @extend .background-bar;
+  }
+
+  .background-bar-2 {
+    @extend .background-bar;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #d8d8d8;
+
+    .tab-label {
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 10px 20px;
+      margin: 0;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #cccccc;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.selected {
+        background-color: #ccc;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .section-content {
+    text-align: start;
+    background-color: #ccc;
+    padding: 1.5em;
+
+    .section-title {
+      font-size: 1.5em;
+    }
+
+    .section-description {
+      font-size: 1em;
+      line-height: 1.5;
+    }
+  }
+
+  @media #{$mobile} {
+    padding: 0;
+    margin: 0;
+    .title-container {
+      padding-top: 3em;
+    }
+    .section-content {
+      padding: 0;
+      width: 100%;
+    }
+
+    .about-title {
+      font-size: 1.5em;
+    }
+
+    .section-title {
+      font-size: 1.2em;
+    }
+
+    .section-description {
+      padding: 0;
+      font-size: 0.9em;
+    }
+  }
+
+  @media #{$mobileHorizontal} {
+    
+    .section-content {
+      padding: 2em 0;
+      width: 100%;
+    }
+
+    .tabs {
+      flex-direction: flex;
+    }
+
+    .tab-label {
+      font-size: 0.9em;
+      padding: 8px 16px;
+    }
+
+    padding: 0;
+    margin: 0;
+  }
+
+  @media #{$tablet} {
+    padding: 6em;
+    margin: 0;
+
+    .section-content {
+      padding: 1em;
+      width: 100%;
+    }
+
+    .about-title {
+      font-size: 1.8em;
+    }
+
+    .section-title {
+      font-size: 1.3em;
+    }
+
+    .section-description {
+      font-size: 1.1em;
+    }
+  }
+
+  @media #{$desktop} {
+    padding: 12em;
+
+    .about-title {
+      font-size: 2.5em;
+    }
+
+    .section-title {
+      font-size: 1.8em;
+    }
+
+    .section-description {
+      font-size: 1.2em;
+    }
+  }
+}

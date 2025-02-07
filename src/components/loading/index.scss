@@ -1,52 +1,50 @@
 .Loading {
-  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); 
+  z-index: 9999;
 
   &--overlay {
-    position: fixed;
-    z-index: 998;
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex: 1;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background: $background;
+    background-color: rgba(0, 0, 0, 0.5); 
   }
 
   &__spinner {
-    width: px(48);
-    height: px(48);
-    border: px(3) solid $white;
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db;
     border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
 
-    &::after {
-      content: '';
-      box-sizing: border-box;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: px(56);
-      height: px(56);
-      border-radius: 50%;
-      border: px(3) solid transparent;
-      border-bottom-color: $primary;
-    }
+  &__text {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
+
+  &__spinner--small {
+    width: 30px;
+    height: 30px;
+    border-width: 6px;
+  }
+
+  &__spinner--large {
+    width: 70px;
+    height: 70px;
+    border-width: 12px;
   }
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
